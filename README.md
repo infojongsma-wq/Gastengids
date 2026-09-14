@@ -1,31 +1,25 @@
-# Huisgids Markollenweg 2
+# Huisgids Markollenweg 2 — website
 
-Tweetalige (NL/EN) gastengids voor Markollenweg 2 in Holten, als installeerbare
-web-app (PWA). Eén statische site — geen build nodig.
+Meerpagina-website (echte homepage, menu en losse pagina's) van de gastengids,
+tweetalig NL/EN, installeerbaar als app (PWA). Statische site, geen build nodig.
 
-## Bestanden
-- `index.html` — de complete gids (foto's zitten in het bestand)
-- `manifest.webmanifest` — app-instellingen (naam, icoon, kleuren)
-- `sw.js` — service worker; laat de gids ook offline werken
-- `icon-*.png`, `apple-touch-icon.png`, `favicon-64.png` — app-iconen
+Dit is een APARTE versie naast de bestaande one-pager en de PDF; die blijven
+gewoon bestaan.
+
+## Structuur
+- `index.html` — homepage met introductie en kaarten naar elke pagina
+- `aankomst.html`, `het-huis.html`, `zwembad-tuin.html`, `praktisch.html`,
+  `omgeving.html`, `eten-drinken.html`, `contact.html` — de pagina's
+- `styles.css`, `app.js` — gedeelde stijl, menu en taalwissel
+- `img/` — alle foto's (door alle pagina's gedeeld)
+- `manifest.webmanifest`, `sw.js`, `icon-*.png` — app-instellingen, offline, iconen
 - `vercel.json` — kleine serverinstellingen
 
-## Live zetten — kies één route
+## Live zetten
+Zelfde als je vorige keer deed: importeer de map als nieuw project in Vercel
+(vercel.com/new → Import Git Repository, of sleep de map op vercel.com/drop).
+Maak er een NIEUW project van, zodat je bestaande site blijft staan.
 
-### Route A · Vercel drag-and-drop (snelst, geen GitHub nodig)
-1. Ga naar https://vercel.com/new
-2. Sleep de map (of de zip, uitgepakt) naar het venster, of kies "deploy".
-3. Klaar. Je krijgt meteen een URL zoals `huisgids-xxx.vercel.app`.
-
-### Route B · GitHub + automatische updates
-1. Maak op github.com een nieuwe (privé) repository, bv. `gastengids-holten`.
-2. Upload deze bestanden (of `git push` ze).
-3. Ga naar https://vercel.com/new, kies "Import Git Repository" en selecteer de repo.
-4. Deploy. Elke toekomstige push werkt de site automatisch bij.
-
-## Op de telefoon als app
-- iPhone (Safari): deel-knop → "Zet op beginscherm".
-- Android (Chrome): menu → "App installeren" / "Toevoegen aan startscherm".
-
-## Eigen domein
-In Vercel: project → Settings → Domains → domein toevoegen.
+## Updates
+Wijzig je iets, upload dan het gewijzigde bestand opnieuw in de repo; bij een
+Git-koppeling deployt Vercel automatisch.
