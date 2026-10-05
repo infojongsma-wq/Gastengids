@@ -59,6 +59,7 @@
       <div class="row"><dt>Spoedpost Deventer<small>Out-of-hours GP</small></dt><dd>0570 501777 &middot; avond, nacht en weekend / evenings, nights and weekends</dd></div>
       <div class="row"><dt>Service Apotheek Holten<small>Pharmacy</small></dt><dd>Vrijheidslaan 9, 7451 DG Holten &middot; 0548 361 111</dd></div>
       <div class="row"><dt>Deventer Ziekenhuis<small>Hospital</small></dt><dd>Nico Bolkesteinlaan 75, 7416 SE Deventer</dd></div>
+      <div class="row"><dt>Tandarts Ten Bolscher<small>Dentist</small></dt><dd>Haarstraat 60a, 7462 AS Rijssen &middot; 0548 51 84 05 &middot; receptie@tandarts-tenbolscher.nl</dd></div>
     </dl>
   </div>
   <div class="bi">
@@ -71,6 +72,14 @@
     <dl class="rows">
       <div class="row"><dt>Geen spoed<small>Non-urgent</small></dt><dd>0900 8844</dd></div>
       <div class="row"><dt>Politiepost Rijssen<small>Station</small></dt><dd>Rozengaarde 75, 7461 DA Rijssen &middot; maandag t/m vrijdag op afspraak / weekdays by appointment</dd></div>
+    </dl>
+  </div>
+
+  <h3 class="bi"><span class="nl" lang="nl">Meterkast en water</span><span class="en" lang="en">Fuse box and water</span></h3>
+  <div class="panel">
+    <dl class="rows">
+      <div class="row"><dt>Meterkast<small>Fuse box</small></dt><dd><span class="bi"><span class="nl" lang="nl">Naast de wc</span><span class="en" lang="en">Next to the toilet</span></span></dd></div>
+      <div class="row"><dt>Hoofdkraan water<small>Main stopcock</small></dt><dd><span class="bi"><span class="nl" lang="nl">In de kruipruimte, onder de mat bij de voordeur</span><span class="en" lang="en">In the crawl space, under the mat by the front door</span></span></dd></div>
     </dl>
   </div>
 
@@ -118,6 +127,29 @@
     <div class="en"><p class="note">Thank you for taking good care of our home. We hope you enjoyed Holten, and do leave a note on the bar.</p></div>
   </div>
 </section>
+
+</main>
+
+<script>
+(function(){
+  var body = document.body;
+  var nl = document.getElementById('btn-nl');
+  var en = document.getElementById('btn-en');
+  function setLang(l, store){
+    body.dataset.lang = l;
+    document.documentElement.lang = l;
+    nl.setAttribute('aria-pressed', l === 'nl' ? 'true' : 'false');
+    en.setAttribute('aria-pressed', l === 'en' ? 'true' : 'false');
+    if (store) { try { localStorage.setItem('gids-lang', l); } catch (e) {} }
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('gids-lang'); } catch (e) {}
+  setLang(saved === 'en' ? 'en' : 'nl', false);
+  nl.addEventListener('click', function(){ setLang('nl', true); });
+  en.addEventListener('click', function(){ setLang('en', true); });
+  document.getElementById('print').addEventListener('click', function(){ window.print(); });
+})();
+</script>
 </main>
 <footer class="site-foot">
   <div class="in">

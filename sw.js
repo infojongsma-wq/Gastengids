@@ -1,4 +1,4 @@
-const CACHE = 'huisgids-site-v3';
+const CACHE = 'huisgids-site-v11';
 const CORE = ['index.html','styles.css','app.js','manifest.webmanifest','icon-192.png','icon-512.png','apple-touch-icon.png','favicon-64.png'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(CORE); }).then(function () { return self.skipWaiting(); }));
